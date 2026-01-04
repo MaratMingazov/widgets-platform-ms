@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: @app.name@
+  profiles:
+    active: @spring.profiles.active@
+  main:
+    allow-bean-definition-overriding: true
+
+
+springdoc:
+  title: Widgets Service
+  description: Widgets Service
+  version: 1.0.0
+  default-produces-media-type: application/json
+  api-docs:
+    groups:
+      enabled: true
+  swagger-ui:
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
