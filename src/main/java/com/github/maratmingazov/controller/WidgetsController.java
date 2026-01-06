@@ -17,8 +17,8 @@ public class WidgetsController {
 
     @GetMapping
     @Operation(summary = "Get StickyNote")
-    public ResponseEntity<StickyNoteResponse> getStickyNote(String boardId, Long widgetId) {
-        var stickyNote = stickyNoteService.getStickyNoteById(boardId, widgetId);
+    public ResponseEntity<StickyNoteResponse> getStickyNote(String boardKey, Long widgetId) {
+        var stickyNote = stickyNoteService.getStickyNoteById(boardKey, widgetId);
         StickyNoteResponse response = new StickyNoteResponse(stickyNote.id().toString(), stickyNote.text(), stickyNote.color(), stickyNote.x(), stickyNote.y());
         return ResponseEntity.ok(response);
     }
@@ -33,8 +33,8 @@ public class WidgetsController {
 
     @DeleteMapping
     @Operation(summary = "Delete StickyNote")
-    public ResponseEntity<Void> deleteStickyNote(String boardId, Long widgetId) {
-        stickyNoteService.deleteStickyNoteById(boardId, widgetId);
+    public ResponseEntity<Void> deleteStickyNote(String boardKey, Long widgetId) {
+        stickyNoteService.deleteStickyNoteById(boardKey, widgetId);
         return ResponseEntity.ok().build();
     }
 }
