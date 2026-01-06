@@ -8,6 +8,7 @@ import lombok.Getter;
 public enum Color {
     RED("red"),
     YELLOW("yellow"),
+    LIGHT_YELLOW("light_yellow"),
     GREEN("green"),
     BLUE("blue");
 
