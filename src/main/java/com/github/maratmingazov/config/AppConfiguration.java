@@ -1,10 +1,12 @@
 package com.github.maratmingazov.config;
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestClient;
 
+@Log4j2
 @Configuration
 public class AppConfiguration {
 
@@ -19,7 +21,7 @@ public class AppConfiguration {
 
     @Bean
     public RestClient miroClient() {
-        System.out.println("MIRO TOKEN: " + miroToken);
+        log.info("MIRO TOKEN: " + miroToken);
         return RestClient.builder()
                 .baseUrl("https://api.miro.com/v2/")
                 .defaultHeader("Accept", "application/json")

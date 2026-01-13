@@ -3,6 +3,7 @@ package com.github.maratmingazov.service;
 import com.github.maratmingazov.model.Color;
 import com.github.maratmingazov.model.StickyNote;
 import com.github.maratmingazov.repository.StickyNoteRepository;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import lombok.val;
@@ -18,6 +19,11 @@ public class StickyNoteServiceImpl implements StickyNoteService{
 
     @Value("${DEFAULT_COLOR}")
     private Color defaultColor;
+
+    @PostConstruct
+    public void init() {
+        log.info("defaultColor: {}", defaultColor);
+    }
 
     @Override
     public StickyNote getStickyNoteById(String boardKey, Long stickyNoteId) {
