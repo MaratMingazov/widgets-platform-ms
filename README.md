@@ -39,6 +39,9 @@ repository   # External API integration (Miro)
 
 ---
 
+##  Swagger UI
+http://localhost:8090/swagger-ui/index.html#/
+
 ## 🔌 API Endpoints
 
 ### Health Check
