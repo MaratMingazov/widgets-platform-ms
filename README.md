@@ -42,6 +42,9 @@ repository   # External API integration (Miro)
 ##  Swagger UI
 http://localhost:8090/swagger-ui/index.html#/
 
+##  Miro REST API
+https://developers.miro.com/reference/get-sticky-note-item
+
 ## 🔌 API Endpoints
 
 ### Health Check
