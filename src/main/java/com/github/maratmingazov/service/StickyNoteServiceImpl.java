@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 public class StickyNoteServiceImpl implements StickyNoteService{
 
     private final StickyNoteRepository stickyNoteRepository;
+    private final WidgetEventProducer widgetEventProducer;
 
     @Value("${DEFAULT_COLOR}")
     private Color defaultColor;
@@ -35,6 +36,7 @@ public class StickyNoteServiceImpl implements StickyNoteService{
     @Override
     public StickyNote createStickyNote(String boardKey, String text, Integer x, Integer y, Color color) {
         var stickyNote = stickyNoteRepository.createStickyNote(boardKey, text, x, y, (color != null) ? color : defaultColor);
+        widgetEventProducer.sendWidgetCreated(boardKey, stickyNote.id(), text);
         log.info("StickyNote was created with id: {} ", stickyNote.id());
         return stickyNote;
     }
@@ -42,6 +44,7 @@ public class StickyNoteServiceImpl implements StickyNoteService{
     @Override
     public void deleteStickyNoteById(String boardKey, Long stickyNoteId) {
         stickyNoteRepository.deleteStickyNote(boardKey, stickyNoteId);
+        widgetEventProducer.sendWidgetDeleted(boardKey, stickyNoteId);
         log.info("StickyNote was deleted with id: {} ", stickyNoteId);
     }
 }

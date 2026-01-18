@@ -45,6 +45,9 @@ http://localhost:8090/swagger-ui/index.html#/
 ##  Miro REST API
 https://developers.miro.com/reference/get-sticky-note-item
 
+##  Kafka-UI
+http://localhost:8088
+
 ## 🔌 API Endpoints
 
 ### Health Check
