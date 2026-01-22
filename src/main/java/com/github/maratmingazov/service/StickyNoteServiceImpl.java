@@ -36,7 +36,7 @@ public class StickyNoteServiceImpl implements StickyNoteService{
     @Override
     public StickyNote createStickyNote(String boardKey, String text, Integer x, Integer y, Color color) {
         var stickyNote = stickyNoteRepository.createStickyNote(boardKey, text, x, y, (color != null) ? color : defaultColor);
-        widgetEventProducer.sendWidgetCreated(boardKey, stickyNote.id(), text);
+        widgetEventProducer.sendWidgetCreated(boardKey, stickyNote.id(), "StickyNote");
         log.info("StickyNote was created with id: {} ", stickyNote.id());
         return stickyNote;
     }
