@@ -8,8 +8,6 @@ spring:
     active: @spring.profiles.active@
   main:
     allow-bean-definition-overriding: true
-  kafka:
-    bootstrap-servers: kafka-ms:9092
 
 
 springdoc:
