@@ -86,6 +86,17 @@ Request body:
 }
 ```
 
+```curl
+curl -X POST "http://localhost:8090/stickyNote" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "boardKey": "uXjVJ_vkTA4=",
+    "text": "<p>Hello from curl</p>",
+    "x": 100,
+    "y": 100
+  }'
+```
+
 ---
 
 ### Delete Sticky Note
