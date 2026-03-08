@@ -15,7 +15,7 @@ public class AppConfiguration {
      * Alternatively, it can be provided via application.yml:
      * token: your_token_here
      * */
-    //@Value("${MIRO_TOKEN}") // when we run app from IDEA (provide token as program property)
+    //@Value("${MIRO_TOKEN:default}") // when we run app from IDEA (provide token as program property)
     @Value("${MIRO_TOKEN}") // when we run app as jar (provide token as ENV variable)
     private String miroToken;
 

@@ -18,7 +18,7 @@ public class StickyNoteServiceImpl implements StickyNoteService{
     private final StickyNoteRepository stickyNoteRepository;
     private final WidgetEventProducer widgetEventProducer;
 
-    @Value("${DEFAULT_COLOR}")
+    @Value("${DEFAULT_COLOR:yellow}")
     private Color defaultColor;
 
     @PostConstruct
