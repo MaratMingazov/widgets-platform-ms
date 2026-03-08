@@ -121,6 +121,16 @@ java -jar widgets-ms.jar --server.port=8090
 
 You can generate a personal access token by following this [guide](https://developers.miro.com/docs/miro-rest-api-introduction#authorization).
 
+### Running in IntelliJ IDEA
+
+1. Open **Run > Edit Configurations...**
+2. Select your Spring Boot run configuration
+3. In the **CLI Arguments** field, add:
+```
+--MIRO_TOKEN=your-token --DEFAULT_COLOR=RED
+```
+4. Apply and run
+
 ---
 
 ## 🚦 Load Balancer Friendly
