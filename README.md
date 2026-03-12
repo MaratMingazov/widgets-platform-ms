@@ -106,6 +106,9 @@ curl -X POST "http://localhost:8090/stickyNote" \
 ```http
 DELETE /stickyNote?boardKey={boardKey}&widgetId={widgetId}
 ```
+```curl
+curl -X DELETE "http://localhost:8090/stickyNote?boardKey=uXjVJ_vkTA4=&widgetId=3458764663328566489"
+```
 
 ---
 
