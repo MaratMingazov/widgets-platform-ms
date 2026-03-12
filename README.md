@@ -106,17 +106,39 @@ DELETE /stickyNote?boardKey={boardKey}&widgetId={widgetId}
 
 ---
 
+## 🔨 Build
+
+Build the JAR file using Maven:
+```bash
+mvn clean package -P dev
+```
+OR
+```bash
+mvn clean install -P dev -DskipTests=true -DskipITs=true
+```
+
+The built file will be located in the `target/` directory:
+```
+target/widgets-ms-1.0.0.jar
+```
+
+---
+
+## 🚀 Run
+
+Run the built JAR:
+```bash
+java -jar target/widgets-ms-1.0.0.jar --server.port=8090 --MIRO_TOKEN=your_token --DEFAULT_COLOR=RED
+```
+
+---
+
 ## 🔐 Configuration
 
 Required properties:
 ```bash
 MIRO_TOKEN=your_miro_api_token
 DEFAULT_COLOR=LIGHT_YELLOW
-```
-
-Run example:
-```bash
-java -jar widgets-ms.jar --server.port=8090
 ```
 
 You can generate a personal access token by following this [guide](https://developers.miro.com/docs/miro-rest-api-introduction#authorization).
