@@ -66,6 +66,9 @@ OK
 ```http
 GET /stickyNote?boardKey={boardKey}&widgetId={widgetId}
 ```
+```curl
+curl "http://localhost:8090/stickyNote?boardKey=uXjVJ_vkTA4=&widgetId=3458764663328566489" 
+```
 
 ---
 
